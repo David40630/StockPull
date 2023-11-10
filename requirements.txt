@@ -1,0 +1,12 @@
+beautifulsoup4
+certifi
+charset-normalizer
+colorama
+idna
+pymongo
+python-dateutil
+requests
+six
+soupsieve
+tqdm
+urllib3
