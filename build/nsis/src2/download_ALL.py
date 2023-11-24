@@ -1,3 +1,4 @@
+import keyboard
 import os, sys, requests, math, configparser, json
 from os.path import exists
 from bs4 import BeautifulSoup
@@ -22,3 +23,9 @@ if __name__ == "__main__":
     # part of download DG
     download_DG.main_DG()
 
+    print("Press A key to continue...")
+
+    # Wait for a key press
+    keyboard.wait("A")
+
+    print("Congratulations!")

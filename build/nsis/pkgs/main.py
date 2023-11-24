@@ -1,3 +1,4 @@
+import keyboard
 from src2 import download_IDELIST, download_DK, download_FenHong, download_CW, download_DG
 
 if __name__ == "__main__":
@@ -16,3 +17,9 @@ if __name__ == "__main__":
     # part of download DG
     download_DG.main_DG()
 
+    print("Press A key to continue...")
+
+    # Wait for a key press
+    keyboard.wait("A")
+
+    print("Congratulations!")

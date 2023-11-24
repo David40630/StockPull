@@ -71,8 +71,8 @@ Section "!${PRODUCT_NAME}" sec_app
 
       ; Install files
     SetOutPath "$INSTDIR"
-      File "StockPull.launch.pyw"
       File "main.ico"
+      File "StockPull.launch.pyw"
       File "README.md"
 
   ; Install directories
@@ -179,8 +179,8 @@ Section "Uninstall"
   ; Remove ourselves from %PATH%
 
   ; Uninstall files
-    Delete "$INSTDIR\StockPull.launch.pyw"
     Delete "$INSTDIR\main.ico"
+    Delete "$INSTDIR\StockPull.launch.pyw"
     Delete "$INSTDIR\README.md"
   ; Uninstall directories
     RMDir /r "$INSTDIR\Python"

@@ -3,4 +3,5 @@
 *.pyc
 /download
 /src
+/build
 requirements1.txt
