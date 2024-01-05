@@ -170,15 +170,19 @@ def core_CW(index):
     dates = get_lastday_of_quarter()
     # date2021 = '2021-12-31'
     ctype = get_type(index)
-    ZCFZB2_result = get_ZCFZB2(ide=index['IDE'], companyType=ctype, dates=dates)
-    if ZCFZB2_result is not False:
-        make_text_file("ZCFZB2_" + index['IDE'], ZCFZB2_result)
-    XJLLB2_result = get_XJLLB2(ide=index['IDE'], companyType=ctype, dates=dates)
-    if XJLLB2_result is not False:
-        make_text_file("XJLLB2_" + index['IDE'], XJLLB2_result)
-    LRB2_result = get_LRB2(ide=index['IDE'], companyType=ctype, dates=dates)
-    if LRB2_result is not False:
-        make_text_file("LRB2_" + index['IDE'], LRB2_result)
+    directory_path = '../download/CW'
+    if not os.path.exists(os.path.join(directory_path, "ZCFZB2_" + index['IDE'] + ".txt")):
+        ZCFZB2_result = get_ZCFZB2(ide=index['IDE'], companyType=ctype, dates=dates)
+        if ZCFZB2_result is not False:
+            make_text_file("ZCFZB2_" + index['IDE'], ZCFZB2_result)
+    if not os.path.exists(os.path.join(directory_path, "XJLLB2_" + index['IDE'] + ".txt")):
+        XJLLB2_result = get_XJLLB2(ide=index['IDE'], companyType=ctype, dates=dates)
+        if XJLLB2_result is not False:
+            make_text_file("XJLLB2_" + index['IDE'], XJLLB2_result)
+    if not os.path.exists(os.path.join(directory_path, "LRB2_" + index['IDE'] + ".txt")):
+        LRB2_result = get_LRB2(ide=index['IDE'], companyType=ctype, dates=dates)
+        if LRB2_result is not False:
+            make_text_file("LRB2_" + index['IDE'], LRB2_result)
     # ZYZ2_result = get_ZYZ2(ide=index['IDE'])
     # make_text_file("ZYZ2_" + index['IDE'], ZYZ2_result)
     # DBFX2_result = get_DBFX2(ide=index['IDE'])

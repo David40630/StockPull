@@ -119,11 +119,11 @@ def main_DG():
     print("Starting report files download...")
     with open("../download/PDG/hyyb.txt", "r") as f:
         all_list = f.read()
-    
+
     list = json.loads(all_list)
     path = "../download/PDG/hyyb"
     os.makedirs(path, exist_ok = True)
-    multiprocessing.freeze_support();
+    multiprocessing.freeze_support()
     pool = multiprocessing.Pool(processes=10)
     for _ in tqdm.tqdm(pool.imap_unordered(core_DG, list), total=len(list)): pass
     

@@ -75,7 +75,9 @@ def handle_dk_list_file(filename):
     with open ("../download/IDELIST/" + filename + ".txt", "r") as f:
         json_string = f.read()
         json_object = json.loads(json_string)
-    list = [x for x in json_object]
+    directory_path = '../download/QUATE'
+    file_names = [f for f in os.listdir(directory_path) if os.path.isfile(os.path.join(directory_path, f))]
+    list = [x for x in json_object if 'QUATE_' + x['IDE'] + '.txt' not in file_names]
     multiprocessing.freeze_support()
     pool = multiprocessing.Pool(processes=20)
     for _ in tqdm.tqdm(pool.imap_unordered(download_stock_data, list), total=len(list)): pass
@@ -123,7 +125,9 @@ def main_DK():
     with open ("../download/IDELIST/FOREXLIST.txt", "r") as f:
         json_string = f.read()
         json_object = json.loads(json_string)
-    list = [x for x in json_object]
+    directory_path = '../download/QUATE'
+    file_names = [f for f in os.listdir(directory_path) if os.path.isfile(os.path.join(directory_path, f))]
+    list = [x for x in json_object if 'QUATE_' + x['IDE'] + '.txt' not in file_names]
     # lmt = int(parser['download']['FETCH_LIMIT'])
     lmt = 1000
     multiprocessing.freeze_support();
