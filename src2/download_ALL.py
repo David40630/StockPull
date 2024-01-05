@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime, timedelta, date
 import tqdm, multiprocessing
 import EM_TOOL
-import download_IDELIST, download_DK, download_FenHong, download_CW, download_DG
+import download_IDELIST, download_DK, download_FenHong, download_CW, download_DG, download_NEWS
 
 if __name__ == "__main__":
     # part of IDELIST download 
@@ -22,6 +22,9 @@ if __name__ == "__main__":
 
     # part of download DG
     download_DG.main_DG()
+
+    # part of download NEWS
+    download_NEWS.main_NEWS()
 
     print("Press A key to continue...")
 
