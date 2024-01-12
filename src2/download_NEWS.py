@@ -48,7 +48,7 @@ def handle_news_list_file(dirname):
         driver.get(anchor_link)
         wait = WebDriverWait(driver, 10)
         wait.until(EC.presence_of_element_located((By.ID, 'topbox')))
-        filelocation = dirname + url_parts[-1].split('.')[0]
+        filelocation = dirname + '/' + url_parts[-1].split('.')[0]
         title = driver.find_element(By.ID, 'topbox')
         content = driver.find_element(By.ID, 'ContentBody')
         make_html_file(filelocation, title, content)
