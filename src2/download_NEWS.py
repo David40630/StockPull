@@ -16,7 +16,7 @@ def make_html_file(filelocation, title, content):
         f.write(text)
 
 options = webdriver.ChromeOptions()
-# options.add_argument('--headless')
+options.add_argument('--headless')
 options.add_argument('--disable-gpu')
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
