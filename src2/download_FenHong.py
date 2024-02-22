@@ -73,7 +73,7 @@ def main_FenHong():
         abs_file_path = os.path.join(script_dir, rel_path)
         with open(abs_file_path, "w") as f:
             f.write(text)
-        if (count < 6):
+        if (count < 12):
             count += 1
         else:
             break
